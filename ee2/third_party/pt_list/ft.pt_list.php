@@ -186,6 +186,9 @@ class Pt_list_ft extends EE_Fieldtype {
 	 */
 	function replace_tag($data, $params = array(), $tagdata = FALSE)
 	{
+		// ignore if empty
+		if (! $data) return '';
+
 		if (! $tagdata)
 		{
 			return $this->replace_ul($data, $params);

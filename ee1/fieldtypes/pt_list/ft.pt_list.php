@@ -95,4 +95,85 @@ class Pt_list extends Fieldframe_Fieldtype {
 
 		return $this->display_field($cell_name, $data, $settings, TRUE);
 	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Save Field
+	 */
+	function save_field($data, $settings)
+	{
+		// flatten list into one string
+		$data = implode("\n", array_filter($data));
+
+		// use real quotes
+		str_replace('&quot;', '"', $data);
+
+		return $data;
+	}
+
+	/**
+	 * Save Cell
+	 */
+	function save_cell($data, $settings)
+	{
+		return $this->save_field($data, $settings);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Display Tag
+	 */
+	function display_tag($params, $tagdata, $data, $settings)
+	{
+		global $FNS;
+
+		// ignore if empty
+		if (! $data) return '';
+
+		if (! $tagdata)
+		{
+			return $this->ul($params, $tagdata, $data, $settings);
+		}
+
+		$r = '';
+
+		$data = explode("\n", $data);
+
+		foreach ($data as $item)
+		{
+			$item_tagdata = $tagdata;
+
+			$vars = array('item' => $item);
+
+			$item_tagdata = $FNS->prep_conditionals($item_tagdata, $vars);
+			$item_tagdata = $FNS->var_swap($item_tagdata, $vars);
+
+			$r .= $item_tagdata;
+		}
+
+		return $r;
+	}
+
+	/**
+	 * UL
+	 */
+	function ul($params, $tagdata, $data, $settings)
+	{
+		return '<ul>'."\n"
+		     .   $this->display_tag($params, '<li>'.LD.'item'.RD.'</li>'."\n", $data, $settings)
+		     . '</ul>';
+	}
+
+	/**
+	 * OL
+	 */
+	function ol($params, $tagdata, $data, $settings)
+	{
+		return '<ol>'."\n"
+		     .   $this->display_tag($params, '<li>'.LD.'item'.RD.'</li>'."\n", $data, $settings)
+		     . '</ol>';
+	}
+
 }

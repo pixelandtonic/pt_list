@@ -1,0 +1,15 @@
+ul.pt-list { margin: 5px 0 0; padding: 0; list-style-type: none; }
+ul.pt-list li { margin: 0 0 5px; padding-left: 24px; background: url(../images/bullet.gif) no-repeat 9px 6px; }
+ul.pt-list li.last { margin-bottom: 0; }
+ul.pt-list li span { cursor: pointer; }
+
+ul.pt-list li.input { padding: 0 28px 0 0; background: none; }
+ul.pt-list li.input input { padding-left: 22px; width: 100%; background: #fff url(../images/bullet.gif) no-repeat; }
+
+ul.pt-list.ee1 { margin-right: 8px; }
+ul.pt-list.ee1 li.input input { background-position: 8px 6px; }
+
+ul.pt-list.ee2 li.input input { background-position: 8px 9px; }
+ul.pt-list.ee2 li.input input:focus { padding-left: 21px; background-position: 7px 8px; }
+
+.matrix ul.pt-list { margin: 0; }

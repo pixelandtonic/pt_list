@@ -197,7 +197,14 @@ class Pt_list_ft extends EE_Fieldtype {
 		// pre_process() fallback for Matrix
 		if (is_string($data)) $data = $this->pre_process($data);
 
-		return $this->EE->TMPL->parse_variables($tagdata, $data);
+		$r = $this->EE->TMPL->parse_variables($tagdata, $data);
+
+		if (isset($params['backspace']) && $params['backspace'])
+		{
+			$r = substr($r, 0, -$params['backspace']);
+		}
+
+		return $r;
 	}
 
 	/**

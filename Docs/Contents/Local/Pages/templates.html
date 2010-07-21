@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>P&amp;T List Docs - Template Tags and Parameters</title>
+	<meta name="author" content="Pixel &amp; Tonic, Inc." />
+	<meta name="viewport" content="width=1000" />
+	<link rel="stylesheet" type="text/css" href="../styles/docs.css" />
+</head>
+
+<body class="page">
+<div id="page">
+
+	<h1>Template Tags and Parameters</h1>
+
+	<section>
+		<h2>Primary Tag Pair</h2>
+
+		<p>Calling your P&amp;T List field with a tag pair allows you to fully customize the output:</p>
+		<pre><code>&lt;p&gt;I like <em>{favorite_things backspace="2"}</em>{item}, <em>{/favorite_things}</em>.&lt;/p&gt;</code></pre>
+
+		<h4>Single Variable Tags</h4>
+		<p>The following single variable is available within your tag pair:</p>
+
+		<dl>
+			<dt><code>{item}</code></dt>
+			<dd>The current item</dd>
+		</dl>
+	</section>
+
+	<section>
+		<h2><code>:ol</code> and <code>:ul</code> Tags</h2>
+
+		<p>Returns an ordered/unordered list of each of your selected options</p>
+		<pre><code>&lt;h3&gt;My favorite things:&lt;/h3&gt;
+{favorite_things<em>:ul</em>}</code></pre>
+	</section>
+
+</div>
+</body>
+</html>

@@ -153,6 +153,11 @@ class Pt_list extends Fieldframe_Fieldtype {
 			$r .= $item_tagdata;
 		}
 
+		if (isset($params['backspace']) && $params['backspace'])
+		{
+			$r = substr($r, 0, -$params['backspace']);
+		}
+
 		return $r;
 	}
 

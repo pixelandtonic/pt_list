@@ -107,7 +107,7 @@ class Pt_list extends Fieldframe_Fieldtype {
 		$data = implode("\n", array_filter($data));
 
 		// use real quotes
-		str_replace('&quot;', '"', $data);
+		$data = str_replace('&quot;', '"', $data);
 
 		return $data;
 	}

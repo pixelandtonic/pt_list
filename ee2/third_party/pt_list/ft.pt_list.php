@@ -114,7 +114,7 @@ class Pt_list_ft extends EE_Fieldtype {
 
 		if ($data)
 		{
-			$list = explode("\n", $data);
+			$list = is_array($data) ? $data : explode("\n", $data);
 
 			foreach($list as $li)
 			{

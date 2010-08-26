@@ -12,7 +12,7 @@ class Pt_list extends Fieldframe_Fieldtype {
 
 	var $info = array(
 		'name'             => 'P&amp;T List',
-		'version'          => '1.0',
+		'version'          => '1.0.2',
 		'versions_xml_url' => 'http://pixelandtonic.com/ee/versions.xml',
 		'no_lang'          => TRUE
 	);

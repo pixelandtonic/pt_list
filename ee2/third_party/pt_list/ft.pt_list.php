@@ -140,6 +140,14 @@ class Pt_list_ft extends EE_Fieldtype {
 		return $this->display_field($data, TRUE);
 	}
 
+	/**
+	 * Display LV field
+	 */
+	function display_var_field($data)
+	{
+		return $this->display_field($data);
+	}
+
 	// --------------------------------------------------------------------
 
 	/**
@@ -160,6 +168,14 @@ class Pt_list_ft extends EE_Fieldtype {
 	 * Save Cell
 	 */
 	function save_cell($data)
+	{
+		return $this->save($data);
+	}
+
+	/**
+	 * Save Var
+	 */
+	function save_var_field($data)
 	{
 		return $this->save($data);
 	}
@@ -225,6 +241,14 @@ class Pt_list_ft extends EE_Fieldtype {
 		return '<ol>'.NL
 		     .   $this->replace_tag($data, $params, '<li>'.LD.'item'.RD.'</li>'.NL)
 		     . '</ol>';
+	}
+
+	/**
+	 * Display Variable tag
+	 */
+	function display_var_tag($data, $params, $tagdata)
+	{
+		return $this->replace_tag($data, $params, $tagdata);
 	}
 
 }

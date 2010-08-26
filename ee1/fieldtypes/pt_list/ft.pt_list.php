@@ -13,7 +13,8 @@ class Pt_list extends Fieldframe_Fieldtype {
 	var $info = array(
 		'name'             => 'P&amp;T List',
 		'version'          => '1.0',
-		'versions_xml_url' => 'http://pixelandtonic.com/ee/versions.xml'
+		'versions_xml_url' => 'http://pixelandtonic.com/ee/versions.xml',
+		'no_lang'          => TRUE
 	);
 
 	// --------------------------------------------------------------------
@@ -96,6 +97,14 @@ class Pt_list extends Fieldframe_Fieldtype {
 		return $this->display_field($cell_name, $data, $settings, TRUE);
 	}
 
+	/**
+	 * Display LV field
+	 */
+	function display_var_field($cell_name, $data, $settings)
+	{
+		return $this->display_field($cell_name, $data, $settings);
+	}
+
 	// --------------------------------------------------------------------
 
 	/**
@@ -116,6 +125,14 @@ class Pt_list extends Fieldframe_Fieldtype {
 	 * Save Cell
 	 */
 	function save_cell($data, $settings)
+	{
+		return $this->save_field($data, $settings);
+	}
+
+	/**
+	 * Save Var
+	 */
+	function save_var_field($data, $settings)
 	{
 		return $this->save_field($data, $settings);
 	}
@@ -179,6 +196,14 @@ class Pt_list extends Fieldframe_Fieldtype {
 		return '<ol>'."\n"
 		     .   $this->display_tag($params, '<li>'.LD.'item'.RD.'</li>'."\n", $data, $settings)
 		     . '</ol>';
+	}
+
+	/**
+	 * Display Variable tag
+	 */
+	function display_var_tag($params, $tagdata, $data, $settings)
+	{
+		return $this->display_tag($params, $tagdata, $data, $settings);
 	}
 
 }

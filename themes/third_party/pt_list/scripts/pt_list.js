@@ -74,7 +74,7 @@ var ptListItem = function($li, $mainInput){
 
 	var editItem = function(){
 		$li.addClass('input');
-		$text = $('<input type="text" class="field" style="width: 100%" />').val(val);
+		$text = $('<input type="text" class="field" style="width: 100%" />').val(val.replace('&amp;', '&'));
 		$span.replaceWith($text);
 		$text.focus();
 

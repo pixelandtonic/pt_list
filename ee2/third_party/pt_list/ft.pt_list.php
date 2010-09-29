@@ -119,7 +119,7 @@ class Pt_list_ft extends EE_Fieldtype {
 			foreach($list as $li)
 			{
 				$r .= '<li><span>'.$li.'</span>'
-				    .   '<input type="hidden" name="'.$field_name.'[]" value="'.str_replace(array('"', '&'), array('&quot;', '&amp;'), $li).'" />'
+				    .   '<input type="hidden" name="'.$field_name.'[]" value="'.str_replace('"', '&quot;', $li).'" />'
 				    . '</li>';
 			}
 		}

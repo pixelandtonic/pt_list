@@ -1,11 +1,11 @@
 <?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-if (! defined('PT_SWITCH_VER'))
+if (! defined('PT_LIST_VER'))
 {
 	// get the version from config.php
 	require PATH_THIRD.'pt_list/config.php';
-	define('PT_SWITCH_VER',  $config['version']);
+	define('PT_LIST_VER',  $config['version']);
 }
 
 
@@ -20,7 +20,7 @@ class Pt_list_ft extends EE_Fieldtype {
 
 	var $info = array(
 		'name'    => 'P&amp;T List',
-		'version' => PT_SWITCH_VER
+		'version' => PT_LIST_VER
 	);
 
 	/**

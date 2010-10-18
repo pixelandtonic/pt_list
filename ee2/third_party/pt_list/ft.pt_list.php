@@ -23,6 +23,8 @@ class Pt_list_ft extends EE_Fieldtype {
 		'version' => PT_LIST_VER
 	);
 
+	var $has_array_data = TRUE;
+
 	/**
 	 * Fieldtype Constructor
 	 */

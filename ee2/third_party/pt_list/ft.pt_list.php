@@ -1,12 +1,7 @@
 <?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-if (! defined('PT_LIST_VER'))
-{
-	// get the version from config.php
-	require PATH_THIRD.'pt_list/config.php';
-	define('PT_LIST_VER',  $config['version']);
-}
+require_once PATH_THIRD.'pt_list/config.php';
 
 
 /**

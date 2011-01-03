@@ -6,7 +6,7 @@
  *
  * @package   P&T List
  * @author    Brandon Kelly <brandon@pixelandtonic.com>
- * @copyright Copyright (c) 2010 Pixel & Tonic, LLC
+ * @copyright Copyright (c) 2011 Pixel & Tonic, Inc
  */
 class Pt_list extends Fieldframe_Fieldtype {
 

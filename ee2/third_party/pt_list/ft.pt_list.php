@@ -18,6 +18,7 @@ class Pt_list_ft extends EE_Fieldtype {
 		'version' => PT_LIST_VER
 	);
 
+	// enable tag pairs
 	var $has_array_data = TRUE;
 
 	/**

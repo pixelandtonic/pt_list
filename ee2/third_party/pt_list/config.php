@@ -3,7 +3,7 @@
 if (! defined('PT_LIST_NAME'))
 {
 	define('PT_LIST_NAME', 'P&amp;T List');
-	define('PT_LIST_VER',  '1.0.2');
+	define('PT_LIST_VER',  '1.0.3');
 }
 
 $config['name']    = PT_LIST_NAME;

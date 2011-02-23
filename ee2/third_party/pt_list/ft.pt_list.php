@@ -149,12 +149,20 @@ class Pt_list_ft extends EE_Fieldtype {
 	// --------------------------------------------------------------------
 
 	/**
+	 * Filter Data
+	 */
+	private function _filter_data($item)
+	{
+		return ($item !== '');
+	}
+
+	/**
 	 * Save Field
 	 */
 	function save($data)
 	{
 		// flatten list into one string
-		$data = implode("\n", array_filter($data));
+		$data = implode("\n", array_filter($data, array(&$this, '_filter_data')));
 
 		// use real quotes
 		$data = str_replace('&quot;', '"', $data);

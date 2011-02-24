@@ -166,11 +166,14 @@ class Pt_list extends Fieldframe_Fieldtype {
 
 		$data = explode("\n", $data);
 
-		foreach ($data as $item)
+		foreach ($data as $index => $item)
 		{
 			$item_tagdata = $tagdata;
 
-			$vars = array('item' => $item);
+			$vars = array(
+				'count' => ($index+1),
+				'item' => $item
+			);
 
 			$item_tagdata = $FNS->prep_conditionals($item_tagdata, $vars);
 			$item_tagdata = $FNS->var_swap($item_tagdata, $vars);

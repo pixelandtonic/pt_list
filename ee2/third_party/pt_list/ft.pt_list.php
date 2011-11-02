@@ -161,6 +161,8 @@ class Pt_list_ft extends EE_Fieldtype {
 	 */
 	function save($data)
 	{
+		if (! is_array($data)) $data = array();
+
 		// flatten list into one string
 		$data = implode("\n", array_filter($data, array(&$this, '_filter_data')));
 
